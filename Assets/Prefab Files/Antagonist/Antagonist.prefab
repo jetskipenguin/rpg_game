@@ -851,7 +851,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 25
-  attackInterval: 1
+  initialAttackInterval: 0.3
+  subsequentAttackInterval: 1
 --- !u!1 &4930580856189411577
 GameObject:
   m_ObjectHideFlags: 0

@@ -615,7 +615,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 5
-  attackInterval: 1
+  initialAttackInterval: 0.4
+  subsequentAttackInterval: 1
 --- !u!58 &6151987261584102249
 CircleCollider2D:
   m_ObjectHideFlags: 0

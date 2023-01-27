@@ -5,10 +5,12 @@ using UnityEngine;
 public class EnemyMeleeAttack : MonoBehaviour
 {
     public float attackDamage;
-    public float attackInterval;
+    public float initialAttackInterval;
+	public float subsequentAttackInterval;
 
     private float nextAttackTime = 0f;
 	private float colliderRadius;
+	private bool initial = true;
 	private bool inRange = false;
 	private bool pastInRange = false;
 	private GameObject playerTarget;
@@ -26,29 +28,24 @@ public class EnemyMeleeAttack : MonoBehaviour
 		{
 			if(!inRange)
 			{
-				Debug.Log("Got in Range");
-				nextAttackTime = Time.time + attackInterval;
-				Debug.Log(nextAttackTime);
+				nextAttackTime = Time.time + initialAttackInterval;
 			}
 			inRange = true;
 		}
-		else
+		else if(inRange)
 		{
-			if(inRange)
-			{
-				Debug.Log("Got out of range");
-				inRange = false;
-			}
-			
+			inRange = false;
+			initial = true;
 		}
 		pastInRange = inRange;
 
 		if(TryDamage())
 		{
-			Debug.Log("Damage");
-			Debug.Log(Time.time);
 			playerTarget.GetComponent<PlayerController>().TakeDamage(attackDamage);
-			nextAttackTime = Time.time + attackInterval;
+			nextAttackTime = Time.time + subsequentAttackInterval;
+			Debug.Log(nextAttackTime);
+			//tracking initial attack, The first attack comes out faster to prevent people from walking right past the enemies
+			if (initial) { initial = false; }
 		}
 
 	}
