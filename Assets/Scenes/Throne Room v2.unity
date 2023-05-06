@@ -23058,6 +23058,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Court Mage Melanie
       objectReference: {fileID: 0}
+    - target: {fileID: 4086304462577602309, guid: 4e1645916b0927c4fa8c14bb5aa02d43, type: 3}
+      propertyPath: items.Array.data[0].cost
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086304462577602309, guid: 4e1645916b0927c4fa8c14bb5aa02d43, type: 3}
+      propertyPath: items.Array.data[1].cost
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 4086304462577602309, guid: 4e1645916b0927c4fa8c14bb5aa02d43, type: 3}
+      propertyPath: items.Array.data[2].cost
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 6075814655255026518, guid: 4e1645916b0927c4fa8c14bb5aa02d43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
